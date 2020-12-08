@@ -12,7 +12,21 @@ class Difference {
     public int maximumDifference;
 
     // Add your code here
+    Difference(int[] elements){
+        this.elements=elements;
 
+    }
+
+    void computeDifference(){
+        maximumDifference=0;
+        Arrays.sort(elements);
+
+        for (int i = 0; i <= elements.length-1; i++) {
+            if (maximumDifference<(Math.abs(elements[elements.length-1]-elements[i]))){
+                maximumDifference=Math.abs(elements[elements.length-1]-elements[i]);
+            }
+        }
+    }
 } // End of Difference class
 
 public class Main {
